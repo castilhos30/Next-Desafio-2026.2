@@ -15,7 +15,7 @@ export const Footer = () => {
           <Link href="/home">
             <Image 
               src="/logo2.svg" 
-              alt="Logo Castilhos Belas & Cia" 
+              alt="Logo Castilhos BeCare" 
               width={240} 
               height={100} 
               className="object-contain"
