@@ -56,14 +56,12 @@ export function Header() {
                             <Image src="/logo1.svg" alt="Logo" width={200} height={80} />
                         </Link>
 
-                        {/* NAV DESKTOP */}
                         <nav className="hidden md:flex items-center gap-20 bg-[#B76E79] px-8 rounded-full h-16 border-1 border-[#875950]">
-                            <ActiveLink href="/home">Home</ActiveLink>
+                            <ActiveLink href="/">Home</ActiveLink>
                             <ActiveLink href="/sobre">Sobre nós</ActiveLink>
                             <ActiveLink href="/produtos">Produtos</ActiveLink>
                         </nav>
 
-                        {/* AÇÕES DESKTOP */}
                         <div className="hidden md:flex items-center gap-5 h-16">
                             <Link href="/contato" className="text-white hover:text-[#e09e90] transition-colors bg-[#B76E79] p-2 rounded-4xl">
                                 <Button className={pathname === "/contato"

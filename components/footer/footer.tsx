@@ -30,7 +30,7 @@ export const Footer = () => {
           </div>
           
           <nav className="flex flex-col space-y-3 text-center items-center text-lg">
-            <Link href="/home" className="hover:text-white/70 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
             <Link href="/produtos" className="hover:text-white/70 transition-colors">Produtos</Link>
             <Link href="/sobre" className="hover:text-white/70 transition-colors">Sobre Nós</Link>
             <Link href="/contato" className="hover:text-white/70 transition-colors">Contato</Link>
