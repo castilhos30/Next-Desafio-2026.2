@@ -52,7 +52,7 @@ export function Header() {
                         isScrolled ? "h-24" : "h-28"
                     }`}>
                         
-                        <Link href="/home" className="z-40">
+                        <Link href="/" className="z-40">
                             <Image src="/logo1.svg" alt="Logo" width={200} height={80} />
                         </Link>
 
@@ -104,7 +104,7 @@ export function Header() {
                 }`}
             >
                 <div className="flex items-center justify-between mb-12">
-                    <Link href="/home" onClick={closeMenu}>
+                    <Link href="/" onClick={closeMenu}>
                         <Image src="/logo1.svg" alt="Logo" width={160} height={60} />
                     </Link>
                     <div className="flex items-center gap-4 text-[#e09e90]">

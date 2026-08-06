@@ -5,7 +5,7 @@ export const HeroSection = () => {
   return (
     <section className="w-full bg-[url('/hero-section.png')] bg-cover bg-center bg-no-repeat px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-12 h-[calc(100vh-112px)] md:h-[calc(90vh-112px)] pt-24 md:pt-0">
       
-      <div className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2 space-y-6">
+      <div className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2 md:px-20 space-y-6">
         <div className="space-y-4 text-[#B76E79]">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             Lorem Ipsum
@@ -24,7 +24,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+      <div className="w-full md:w-1/2 flex justify-center md:justify-end md:px-24">
         <Image
           src="/Logo1.svg"
           alt="Logo Castilhos Belas & Cia"
