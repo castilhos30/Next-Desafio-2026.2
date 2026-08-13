@@ -28,8 +28,6 @@ export default function PaginaProdutos() {
 
             <section className="w-full max-w-[1000px] flex items-center justify-center gap-4 mb-12">
                 <Pesquisa
-                    placeholder="pesquisar produto..."
-                    onChange={(e) => console.log(e.target.value)}
                 />
 
                 <Filtro
