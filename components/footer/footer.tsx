@@ -67,7 +67,7 @@ export const Footer = () => {
         <p>&copy; {new Date().getFullYear()} Castilhos BeCare. Todos os direitos reservados.</p>
         
         <p className="mt-2 md:mt-0">
-          Desenvolvido por: <a href="https://www.linkedin.com/in/marcos-c%C3%A9sar-zamboni-320158389/"><strong>Marcos Bicheiro</strong></a>
+          Desenvolvido por: <a href="https://www.linkedin.com/in/marcos-c%C3%A9sar-zamboni-320158389/"><strong>Marcos</strong></a>
         </p>
       </div>
     </footer>
