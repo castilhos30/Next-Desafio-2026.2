@@ -11,7 +11,7 @@ export function Redes() {
          <div className="flex items-center justify-center w-14 h-14 bg-[#ba7d82]/80 border border-white/10 rounded-full ">
                     <BsAppIndicator className="w-7 h-7 text-black/40" />
                 </div>
-        <h2 className="text-2xl text-white font-medium">Nossas Redes</h2>
+        <h2 className="font-belleza text-2xl text-white font-medium">Nossas Redes</h2>
       </header>
 
       <div className="flex flex-col gap-6">
@@ -25,7 +25,7 @@ export function Redes() {
           <div className="flex items-center justify-center w-11 h-11 rounded-full border-[1.5px] border-white text-[#8a5a5e] bg-white/10 group-hover:bg-white/30 transition-colors">
               <BsInstagram className="text-white size-6" />
           </div>
-          <span className="text-white mx-2">@castilhosbe_care</span>
+          <span className="font-montserrat text-white mx-2">@castilhosbe_care</span>
         </a>
 
         <a 
@@ -37,7 +37,7 @@ export function Redes() {
           <div className="flex items-center justify-center w-11 h-11 rounded-full border-[1.5px] border-white text-[#8a5a5e] bg-white/10 group-hover:bg-white/30 transition-colors">
               <BsWhatsapp className="text-white size-6" />
           </div>
-          <span className="text-white mx-2">(32) </span>
+          <span className="font-montserrat text-white mx-2">(32) </span>
 
         </a>
 
@@ -48,7 +48,7 @@ export function Redes() {
           <div className="flex items-center justify-center w-11 h-11 rounded-full border-[1.5px] border-white text-[#8a5a5e] bg-white/10 group-hover:bg-white/30 transition-colors">
             <BsEnvelope className="text-white size-6" strokeWidth={1.5} />
           </div>
-          <span className="text-white mx-2">...@</span>
+          <span className="font-montserrat text-white mx-2">...@</span>
 
         </a>
 

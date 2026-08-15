@@ -26,21 +26,21 @@ export const Footer = () => {
         <div className="flex flex-col items-center">
           <div className="flex items-center gap-2 mb-6">
             <BsCompass className="text-white size-6" />
-            <h3 className="text-2xl font-semibold">Navegação</h3>
+            <h3 className="font-belleza text-2xl font-semibold">Navegação</h3>
           </div>
           
           <nav className="flex flex-col space-y-3 text-center items-center text-lg">
-            <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
-            <Link href="/produtos" className="hover:text-white/70 transition-colors">Produtos</Link>
-            <Link href="/sobre" className="hover:text-white/70 transition-colors">Sobre Nós</Link>
-            <Link href="/contato" className="hover:text-white/70 transition-colors">Contato</Link>
+            <Link href="/" className="font-montserrat hover:text-white/70 transition-colors">Home</Link>
+            <Link href="/produtos" className="font-montserrat hover:text-white/70 transition-colors">Produtos</Link>
+            <Link href="/sobre" className="font-montserrat hover:text-white/70 transition-colors">Sobre Nós</Link>
+            <Link href="/contato" className="font-montserrat hover:text-white/70 transition-colors">Contato</Link>
           </nav>
         </div>
 
-        <div className="flex flex-col items-center md:items-center">
+        <div className="font-belleza flex flex-col items-center md:items-center">
           <h3 className="text-2xl font-semibold mb-6">Contato</h3>
           
-          <div className="space-y-4 mb-8 text-lg">
+          <div className="font-montserrat space-y-4 mb-8 text-lg">
             <div className="flex items-center gap-3">
               <BsGeoAlt className="text-white size-6" />
               <span>Local XXX</span>

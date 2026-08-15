@@ -29,15 +29,15 @@ export function Card({
       </div>
 
       <div className="p-7 flex flex-col">
-        <h3 className="text-5xl font-bold text-[#E39785] tracking-tight mb-3">
+        <h3 className="font-dancing text-5xl font-bold text-[#E39785] tracking-tight mb-3">
           {title}
         </h3>
         
-        <p className="text-2xl leading-tight text-[#A57B76] mb-5">
+        <p className="font-montserrat text-2xl leading-tight text-[#A57B76] mb-5">
           {description}
         </p>
         
-        <span className="text-3xl font-medium text-[#A6B68B]">
+        <span className="font-montserrat text-3xl font-medium text-[#A6B68B]">
           {price}
         </span>
       </div>

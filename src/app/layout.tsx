@@ -1,16 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, Dancing_Script, Cairo, Belleza } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header/header";
 import { Footer } from "@/components/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
+  weight: ["400", "700"], 
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dancingScript = Dancing_Script({
+  weight: ["400", "700"], 
+  variable: "--font-dancing-script",
+  subsets: ["latin"],
+});
+
+const cairo = Cairo({
+  weight: ["400"], 
+  variable: "--font-cairo",
+  subsets: ["latin"], 
+});
+
+const belleza = Belleza({
+  weight: ["400"], 
+  variable: "--font-belleza",
   subsets: ["latin"],
 });
 
@@ -26,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased flex flex-col min-h-screen">
+      <body className={`antialiased flex flex-col min-h-screen ${montserrat.variable} ${dancingScript.variable} ${cairo.variable} ${belleza.variable}`}>
         
         <Header />
 

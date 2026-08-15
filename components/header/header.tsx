@@ -41,7 +41,7 @@ export function Header() {
     return (
         <>
             <header
-                className={`fixed top-0 w-full z-40 transition-all duration-300 ${
+                className={`font-cairo font-bold fixed top-0 w-full z-40 transition-all duration-300 ${
                     isScrolled 
                         ? "bg-[#faf9f9]/95 backdrop-blur-md shadow-sm border-b"
                         : "bg-transparent"
@@ -119,7 +119,7 @@ export function Header() {
 
                 <div className="flex flex-col items-center gap-5 w-full">
                     
-                    <Link href="/home" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#a39795] border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
+                    <Link href="/" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#a39795] border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
                         <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
                         <Home size={28} strokeWidth={1.5} className="mr-3" />
                         <span className="flex-1 text-center font-medium pr-14">Home</span>

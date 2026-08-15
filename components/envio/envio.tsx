@@ -11,7 +11,7 @@ export function Envio() {
                 <div className="flex items-center justify-center w-14 h-14 bg-[#ba7d82]/80 border border-white/10 rounded-full ">
                     <MessageCircle className="w-7 h-7 text-black/40" strokeWidth={1.5} />
                 </div>
-                <h2 className="text-2xl text-white font-medium">Entre em Contato</h2>
+                <h2 className="fon-belleza text-2xl text-white font-medium">Entre em Contato</h2>
             </header>
 
             <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
@@ -19,7 +19,7 @@ export function Envio() {
                 <div className="flex flex-col gap-1.5">
                     <label htmlFor="nome" className="flex items-center gap-2 text-sm text-black/60 ml-1">
                         <User className="w-4 h-4" strokeWidth={2} />
-                        <span>nome</span>
+                        <span className="font-montserrat">nome</span>
                     </label>
                     <input
                         type="text"
@@ -31,7 +31,7 @@ export function Envio() {
                 <div className="flex flex-col gap-1.5">
                     <label htmlFor="email" className="flex items-center gap-2 text-sm text-black/60 ml-1">
                         <Mail className="w-4 h-4" strokeWidth={2} />
-                        <span>email</span>
+                        <span className="font-montserrat">email</span>
                     </label>
                     <input
                         type="email"
@@ -44,7 +44,7 @@ export function Envio() {
                 <div className="flex flex-col gap-1.5">
                     <label htmlFor="mensagem" className="flex items-center gap-2 text-sm text-black/60 ml-1">
                         <MessageCircleCheck className="w-4 h-4" strokeWidth={2} />
-                        <span>mensagem</span>
+                        <span className="font-montserrat">mensagem</span>
                     </label>
                     <textarea
                         id="mensagem"

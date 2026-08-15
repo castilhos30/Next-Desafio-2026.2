@@ -7,10 +7,10 @@ export const HeroSection = () => {
 
             <div className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2 md:px-20 space-y-6">
                 <div className="space-y-4 text-[#B76E79]">
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+                    <h1 className="pt-14 font-dancing font-bold text-4xl md:text-6xl font-bold tracking-tight">
                         Lorem Ipsum
                     </h1>
-                    <p className="text-lg md:text-xl leading-relaxed text-[#B76E79]/80 font-medium">
+                    <p className="font-montserrat font-bold text-lg md:text-xl leading-relaxed text-[#B76E79]/80 font-medium">
                         Outra Lorem Ipsum<br />
                         Outra Lorem Ipsum Outra<br />
                         Lorem Ipsum
@@ -18,7 +18,7 @@ export const HeroSection = () => {
                 </div>
 
                 <div>
-                    <Button className="bg-[#E19888] hover:bg-[#B76E79] text-white px-8 py-3 rounded-full transition-colors font-medium text-lg shadow-sm">
+                    <Button className="font-belleza font-bold bg-[#E19888] hover:bg-[#B76E79] text-white px-8 py-3 rounded-full transition-colors font-medium text-lg shadow-sm">
                         Fale Conosco
                     </Button>
                 </div>
@@ -46,10 +46,10 @@ export const HeroSection2 = () => {
     
     <div className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2 md:px-20 space-y-6">
       <div className="space-y-4 text-[#ED9D8C]">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+        <h1 className="font-dancing text-4xl md:text-6xl font-bold tracking-tight">
           Lorem Ipsum
         </h1>
-        <p className="text-lg md:text-xl leading-relaxed text-[#FDEAE9]/80 font-medium">
+        <p className="font-montserrat text-lg md:text-xl leading-relaxed text-[#FDEAE9]/80 font-medium">
           Outra Lorem Ipsum<br />
           Outra Lorem Ipsum Outra<br />
           Lorem Ipsum

@@ -30,7 +30,7 @@ export function Carrossel({
 
   return (
     <section className={`w-full ${bgColor} py-20 overflow-hidden`}>
-      <h2 className={`text-4xl md:text-5xl font-bold text-center ${titleColor} mb-12 tracking-wide`}>
+      <h2 className={` font-cairo font-bold text-4xl md:text-5xl font-bold text-center ${titleColor} mb-12 tracking-wide`}>
         {title}
       </h2>
 
