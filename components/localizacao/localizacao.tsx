@@ -27,23 +27,23 @@ export function Localizacao() {
         <div className="w-full p-8 bg-white/30 backdrop-blur-sm border border-white/20 rounded-[2rem] shadow-sm">
           <header className="flex items-center gap-3 mb-3">
             <MapPin className="w-6 h-6 text-[#a66a6e]" strokeWidth={1.5} />
-            <h3 className="text-lg text-zinc-800 font-medium">Endereço</h3>
+            <h3 className="text-lg text-white font-medium">Endereço</h3>
           </header>
           <div className="pl-9">
-            <p className="text-base text-zinc-700 font-medium leading-relaxed">Seminha Cabelereira</p>
-            <p className="text-base text-zinc-700 font-medium leading-relaxed">Jamapará</p>
-            <p className="text-base text-zinc-700 font-medium leading-relaxed">Sapucaia</p>
+            <p className="text-base text-white font-medium leading-relaxed">Seminha Cabelereira</p>
+            <p className="text-base text-white font-medium leading-relaxed">Jamapará</p>
+            <p className="text-base text-white font-medium leading-relaxed">Sapucaia</p>
           </div>
         </div>
 
         <div className="w-full p-8 bg-white/30 backdrop-blur-sm border border-white/20 rounded-[2rem] shadow-sm">
           <header className="flex items-center gap-3 mb-3">
             <Clock className="w-6 h-6 text-[#a66a6e]" strokeWidth={1.5} />
-            <h3 className="text-lg text-zinc-800 font-medium">Horário</h3>
+            <h3 className="text-lg text-white font-medium">Horário</h3>
           </header>
           <div className="pl-9">
-            <p className="text-base text-zinc-700 font-medium">Segunda a Sexta: a combinar</p>
-            <p className="text-base text-zinc-700 font-medium">Sábado e Domingo: a combinar</p>
+            <p className="text-base text-white font-medium">Segunda a Sexta: a combinar</p>
+            <p className="text-base text-white font-medium">Sábado e Domingo: a combinar</p>
           </div>
         </div>
 
