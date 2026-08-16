@@ -70,9 +70,10 @@ export function Header() {
                                 }>Contato</Button>
                             </Link>
 
-                            <button className="text-gray-500 hover:text-[#e09e90] transition-colors flex items-center justify-center">
+                           <a href="/carrinho"><button className="text-gray-500 hover:text-[#e09e90] transition-colors flex items-center justify-center">
                                 <ShoppingCart size={28} strokeWidth={1.5} />
                             </button>
+                            </a>
 
                             <button className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 text-gray-500 hover:text-[#e09e90] hover:border-[#e09e90] transition-colors bg-white/50">
                                 <User size={28} strokeWidth={1.5} />
@@ -108,9 +109,10 @@ export function Header() {
                         <Image src="/logo1.svg" alt="Logo" width={160} height={60} />
                     </Link>
                     <div className="flex items-center gap-4 text-[#e09e90]">
-                        <button aria-label="Carrinho">
+                       <a href="/carrinho"> <button aria-label="Carrinho">
                             <ShoppingCart size={36} strokeWidth={1.5} />
                         </button>
+                        </a>
                         <button onClick={closeMenu} aria-label="Fechar menu">
                             <X size={44} strokeWidth={1.5} />
                         </button>

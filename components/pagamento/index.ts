@@ -1,0 +1,1 @@
+export {Pagamento} from "./pagamento"

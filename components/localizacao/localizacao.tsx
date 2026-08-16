@@ -8,7 +8,7 @@ export function Localizacao() {
       <div className="flex flex-col gap-6 w-full h-full">
         <header className="flex items-center gap-3 ml-2">
           <Navigation className="w-7 h-7 text-[#a66a6e]" strokeWidth={1.5} />
-          <h2 className="text-2xl text-zinc-800 font-medium">Local</h2>
+          <h2 className="text-2xl text-white font-belleza">Local</h2>
         </header>
 
         <div className="w-full h-80 lg:h-[28rem] rounded-[2rem] overflow-hidden shadow-sm border border-white/20 bg-black/5">
@@ -47,15 +47,15 @@ export function Localizacao() {
           </div>
         </div>
 
-        <div className="flex justify-center lg:pl-10 mt-2">
+        <div className=" font-belleza flex justify-center lg:pl-10 mt-2">
           <Button className="px-12 py-7 text-lg bg-[#ba7d82] hover:bg-[#a66a6e] text-white rounded-[2rem] font-medium tracking-wide transition-colors">
             <a
-              href="https://maps.app.goo.gl/3A7t1L4gRzUQq4s17"
+              href="https://www.google.com/maps/dir/?api=1&destination=-21.8942458,-42.7106244"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3"
             >
-              <MapPin className="font-cairo font-bold w-6 h-6" />
+              <MapPin className="w-6 h-6" />
               Como chegar
             </a>
           </Button>

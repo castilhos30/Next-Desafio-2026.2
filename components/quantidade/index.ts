@@ -1,0 +1,1 @@
+export { Quantidade } from "./quantidade"
