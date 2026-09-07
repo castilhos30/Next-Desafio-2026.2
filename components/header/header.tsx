@@ -100,7 +100,7 @@ export function Header() {
             )}
 
             <div 
-                className={`fixed top-0 left-0 w-full z-50 bg-[#8b8280] rounded-b-[40px] shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-8 pb-12 px-6 ${
+                className={`fixed top-0 left-0 w-full z-50 bg-[#F5F5F5]/50 rounded-b-[40px] shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-8 pb-12 px-6 ${
                     isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
                 }`}
             >
@@ -121,25 +121,25 @@ export function Header() {
 
                 <div className="flex flex-col items-center gap-5 w-full">
                     
-                    <Link href="/" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#a39795] border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
+                    <Link href="/" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
                         <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
                         <Home size={28} strokeWidth={1.5} className="mr-3" />
                         <span className="flex-1 text-center font-medium pr-14">Home</span>
                     </Link>
 
-                    <Link href="/contato" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#a39795] border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
+                    <Link href="/contato" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
                         <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
                         <Phone size={28} strokeWidth={1.5} className="mr-3" />
                         <span className="flex-1 text-center font-medium pr-14">Contato</span>
                     </Link>
 
-                    <Link href="/sobre" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#a39795] border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
+                    <Link href="/sobre" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
                         <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
                         <User size={28} strokeWidth={1.5} className="mr-3" />
                         <span className="flex-1 text-center font-medium pr-14">Sobre Nós</span>
                     </Link>
 
-                    <Link href="/produtos" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#a39795] border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
+                    <Link href="/produtos" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
                         <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
                         <ShoppingBag size={28} strokeWidth={1.5} className="mr-3" />
                         <span className="flex-1 text-center font-medium pr-14">Produtos</span>
