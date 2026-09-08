@@ -5,8 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ShoppingCart, User, Menu, X, Home, Phone, ShoppingBag } from "lucide-react"; 
-import { ActiveLink } from "@/components/active-link/active-link";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+
+const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/sobre", label: "Sobre nós" },
+    { path: "/produtos", label: "Produtos" },
+];
 
 export function Header() {
     const pathname = usePathname();
@@ -56,24 +62,51 @@ export function Header() {
                             <Image src="/logo1.svg" alt="Logo" width={200} height={80} />
                         </Link>
 
-                        <nav className="hidden md:flex items-center gap-20 bg-[#B76E79] px-8 rounded-full h-16 border-1 border-[#875950]">
-                            <ActiveLink href="/">Home</ActiveLink>
-                            <ActiveLink href="/sobre">Sobre nós</ActiveLink>
-                            <ActiveLink href="/produtos">Produtos</ActiveLink>
+                        <nav className="hidden md:flex items-center justify-center gap-10 lg:gap-16 bg-[#B76E79] px-4 rounded-full h-[3.5rem] border border-[#875950]">
+                            {navLinks.map((link) => {
+                                const isActive = pathname === link.path;
+
+                                return (
+                                    <Link
+                                        key={link.path}
+                                        href={link.path}
+                                        className={`relative px-8 py-2 transition-colors rounded-full text-white ${
+                                            !isActive ? "hover:text-white/80" : ""
+                                        }`}
+                                    >
+                                        <span className="relative z-10 font-medium tracking-wide">
+                                            {link.label}
+                                        </span>
+                                        
+                                        {isActive && (
+                                            <motion.div
+                                                layoutId="bubble-nav"
+                                                className="absolute inset-0 bg-[#e09e90] border border-[#875950] rounded-full shadow-sm"
+                                                transition={{
+                                                    type: "spring",
+                                                    bounce: 0.1,
+                                                    duration: 0.5
+                                                }}
+                                            />
+                                        )}
+                                    </Link>
+                                );
+                            })}
                         </nav>
 
                         <div className="hidden md:flex items-center gap-5 h-16">
                             <Link href="/contato" className="text-white hover:text-[#e09e90] transition-colors bg-[#B76E79] p-2 rounded-4xl">
                                 <Button className={pathname === "/contato"
-                                    ? "bg-[#e09e90] text-white hover:bg-[#e09e90]/90 border-1 border-[#875950] rounded-4xl"
+                                    ? "bg-[#e09e90] text-white hover:bg-[#e09e90]/90 border border-[#875950] rounded-4xl"
                                     : "text-white hover:bg-transparent hover:text-[#e09e90]"
                                 }>Contato</Button>
                             </Link>
 
-                           <a href="/carrinho"><button className="text-gray-500 hover:text-[#e09e90] transition-colors flex items-center justify-center">
-                                <ShoppingCart size={28} strokeWidth={1.5} />
-                            </button>
-                            </a>
+                           <a href="/carrinho">
+                               <button className="text-gray-500 hover:text-[#e09e90] transition-colors flex items-center justify-center">
+                                   <ShoppingCart size={28} strokeWidth={1.5} />
+                               </button>
+                           </a>
 
                             <button className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 text-gray-500 hover:text-[#e09e90] hover:border-[#e09e90] transition-colors bg-white/50">
                                 <User size={28} strokeWidth={1.5} />
@@ -109,9 +142,10 @@ export function Header() {
                         <Image src="/logo1.svg" alt="Logo" width={160} height={60} />
                     </Link>
                     <div className="flex items-center gap-4 text-[#e09e90]">
-                       <a href="/carrinho"> <button aria-label="Carrinho">
-                            <ShoppingCart size={36} strokeWidth={1.5} />
-                        </button>
+                       <a href="/carrinho"> 
+                           <button aria-label="Carrinho">
+                               <ShoppingCart size={36} strokeWidth={1.5} />
+                           </button>
                         </a>
                         <button onClick={closeMenu} aria-label="Fechar menu">
                             <X size={44} strokeWidth={1.5} />
@@ -124,25 +158,25 @@ export function Header() {
                     <Link href="/" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
                         <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
                         <Home size={28} strokeWidth={1.5} className="mr-3" />
-                        <span className="flex-1 text-center font-medium pr-14">Home</span>
+                        <span className="flex-1 text-center font-belleza font-medium pr-14">Home</span>
                     </Link>
 
                     <Link href="/contato" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
                         <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
                         <Phone size={28} strokeWidth={1.5} className="mr-3" />
-                        <span className="flex-1 text-center font-medium pr-14">Contato</span>
+                        <span className="flex-1 text-center font-belleza font-medium pr-14">Contato</span>
                     </Link>
 
                     <Link href="/sobre" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
                         <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
                         <User size={28} strokeWidth={1.5} className="mr-3" />
-                        <span className="flex-1 text-center font-medium pr-14">Sobre Nós</span>
+                        <span className="flex-1 text-center font-belleza font-medium pr-14">Sobre Nós</span>
                     </Link>
 
                     <Link href="/produtos" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
                         <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
                         <ShoppingBag size={28} strokeWidth={1.5} className="mr-3" />
-                        <span className="flex-1 text-center font-medium pr-14">Produtos</span>
+                        <span className="flex-1 text-center font-belleza font-medium pr-14">Produtos</span>
                     </Link>
 
                 </div>
