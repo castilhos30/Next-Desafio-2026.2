@@ -138,7 +138,7 @@ export function Header() {
             >
                 <div className="flex items-center justify-between mb-12">
                     <Link href="/" onClick={closeMenu}>
-                        <Image src="/logo1.svg" alt="Logo" width={160} height={60} />
+                        <Image src="/Logo1.svg" alt="Logo" width={160} height={60} />
                     </Link>
                     <div className="flex items-center gap-4 text-[#e09e90]">
                         <a href="/carrinho">
