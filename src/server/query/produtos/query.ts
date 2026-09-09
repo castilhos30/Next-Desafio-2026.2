@@ -14,7 +14,7 @@ type Produto = {
 
 const GET_PRODUTO = gql`
     query Servico {
-        servicos(first: 6) {
+        servicos(first:20) {
             id
             titulo
             descricao
