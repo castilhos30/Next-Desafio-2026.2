@@ -17,7 +17,7 @@ export function Card({
 
 }: ProductCardProps) {
   return (
-    <div className="w-full max-w-[320px] rounded-[32px] overflow-hidden bg-[url('/hero-section.png')] shadow-[0_8px_24px_rgba(0,0,0,0.12)] flex flex-col">
+    <div className="w-full max-w-[320px] h-[520px] shrink-0 rounded-[32px] overflow-hidden bg-[url('/hero-section.png')] shadow-[0_8px_24px_rgba(0,0,0,0.12)] flex flex-col">
 
       <div className="relative w-full h-[240px]">
         <Image
@@ -29,16 +29,16 @@ export function Card({
         />
       </div>
 
-      <div className="p-7 flex flex-col">
-        <h3 className="font-dancing text-5xl font-bold text-[#E39785] tracking-tight mb-3">
+      <div className="p-7 flex flex-col flex-1">
+        <h3 className="font-dancing text-5xl font-bold text-[#E39785] tracking-tight mb-3 line-clamp-1">
           {title}
         </h3>
 
-        <p className="font-montserrat text-2xl leading-tight text-[#A57B76] mb-5">
+        <p className="font-montserrat text-2xl max-h-[100px] leading-tight text-[#A57B76] mb-5 break-all line-clamp-3">
           {description}
         </p>
 
-        <span className="font-montserrat text-3xl font-medium text-[#A6B68B]">
+        <span className="mt-auto font-montserrat text-3xl font-medium text-[#A6B68B]">
           {price}
         </span>
       </div>
