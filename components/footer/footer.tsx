@@ -14,7 +14,7 @@ export const Footer = () => {
         <div className="flex justify-center md:justify-start items-center h-full">
           <Link href="/home">
             <Image 
-              src="/logo2.svg" 
+              src="/Logo2.svg" 
               alt="Logo Castilhos BeCare" 
               width={240} 
               height={100} 

@@ -57,7 +57,7 @@ export function Header() {
                         }`}>
 
                         <Link href="/" className="z-40">
-                            <Image src="/logo1.svg" alt="Logo" width={200} height={80} />
+                            <Image src="/Logo1.svg" alt="Logo" width={200} height={80} />
                         </Link>
 
                         <nav className="hidden md:flex items-center justify-center gap-10 lg:gap-16 bg-[#B76E79] px-4 rounded-full h-[3.5rem] border border-[#875950]">
