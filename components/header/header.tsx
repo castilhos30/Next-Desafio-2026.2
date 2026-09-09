@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ShoppingCart, User, Menu, X, Home, Phone, ShoppingBag } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, LayoutGroup } from "framer-motion"; 
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -60,36 +60,38 @@ export function Header() {
                             <Image src="/Logo1.svg" alt="Logo" width={200} height={80} />
                         </Link>
 
-                        <nav className="hidden md:flex items-center justify-center gap-10 lg:gap-16 bg-[#B76E79] px-4 rounded-full h-[3.5rem] border border-[#875950]">
-                            {navLinks.map((link) => {
-                                const isActive = pathname === link.path;
+                        <LayoutGroup>
+                            <nav className="hidden md:flex items-center justify-center gap-10 lg:gap-16 bg-[#B76E79] px-4 rounded-full h-[3.5rem] border border-[#875950]">
+                                {navLinks.map((link) => {
+                                    const isActive = pathname === link.path;
 
-                                return (
-                                    <Link
-                                        key={link.path}
-                                        href={link.path}
-                                        className={`relative px-8 py-2 transition-colors rounded-full text-white ${!isActive ? "hover:text-white/80" : ""
-                                            }`}
-                                    >
-                                        <span className="relative z-10 font-medium tracking-wide">
-                                            {link.label}
-                                        </span>
+                                    return (
+                                        <Link
+                                            key={link.path}
+                                            href={link.path}
+                                            className={`relative px-8 py-2 transition-colors rounded-full text-white ${!isActive ? "hover:text-white/80" : ""
+                                                }`}
+                                        >
+                                            <span className="relative z-10 font-medium tracking-wide">
+                                                {link.label}
+                                            </span>
 
-                                        {isActive && (
-                                            <motion.div
-                                                layoutId="bubble-nav"
-                                                className="absolute inset-0 bg-[#e09e90] border border-[#875950] rounded-full shadow-sm"
-                                                transition={{
-                                                    type: "spring",
-                                                    bounce: 0.1,
-                                                    duration: 0.5
-                                                }}
-                                            />
-                                        )}
-                                    </Link>
-                                );
-                            })}
-                        </nav>
+                                            {isActive && (
+                                                <motion.div
+                                                    layoutId="bubble-nav"
+                                                    className="absolute inset-0 bg-[#e09e90] border border-[#875950] rounded-full shadow-sm"
+                                                    transition={{
+                                                        type: "spring",
+                                                        stiffness: 350, 
+                                                        damping: 30   
+                                                    }}
+                                                />
+                                            )}
+                                        </Link>
+                                    );
+                                })}
+                            </nav>
+                        </LayoutGroup>
 
                         <div className="hidden md:flex items-center gap-5 h-16">
                             <Link href="/contato" className="text-white hover:text-[#e09e90] transition-colors bg-[#B76E79] p-2 rounded-4xl">

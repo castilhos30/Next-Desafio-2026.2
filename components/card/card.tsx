@@ -17,7 +17,7 @@ export function Card({
 
 }: ProductCardProps) {
   return (
-    <div className="w-full max-w-[320px] h-[520px] shrink-0 rounded-[32px] overflow-hidden bg-[url('/hero-section.png')] shadow-[0_8px_24px_rgba(0,0,0,0.12)] flex flex-col">
+    <div className="w-full max-w-[320px] h-[520px] shrink-0 rounded-[32px] overflow-hidden bg-[url('/hero-section.png')] shadow-[0_8px_14px_rgba(0,0,0,0.12)] hover:translate-y-[-15px] transition-transform duration-300 flex flex-col">
 
       <div className="relative w-full h-[240px]">
         <Image

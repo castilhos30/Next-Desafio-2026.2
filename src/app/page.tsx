@@ -13,7 +13,7 @@ export default async function Home() {
     <article className="flex flex-col">
       <HeroSection />
 
-      <Carrossel title="Nossos Serviços" bgColor="bg-[#FFF5F3]" uniqueId="servicos">
+      <Carrossel title="Nossos Serviços" bgColor="bg-[#E99081]/40" uniqueId="servicos">
         {produtos.map((produto) => (
           <Card
             key={produto.id}

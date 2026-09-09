@@ -31,7 +31,6 @@ export default async function PaginaProdutos({
 
             <section className="w-full max-w-[1000px] flex items-center justify-center gap-4 mb-12">
                 <Pesquisa />
-                <Filtro />
             </section>
 
             <section className="w-full max-w-[1200px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 justify-items-center">
