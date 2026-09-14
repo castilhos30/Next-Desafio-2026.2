@@ -1,0 +1,1 @@
+export {ContatoEmail} from './email';
