@@ -30,7 +30,7 @@ export function Localizacao() {
             <h3 className="font-cairo font-bold text-lg text-white font-medium">Endereço</h3>
           </header>
           <div className="pl-9">
-            <p className="font-montserrat text-base text-white font-medium leading-relaxed">Seminha Cabelereira</p>
+            <p className="font-montserrat text-base text-white font-medium leading-relaxed">Rua João Miguel, 30</p>
             <p className="font-montserrat text-base text-white font-medium leading-relaxed">Jamapará</p>
             <p className="font-montserrat text-base text-white font-medium leading-relaxed">Sapucaia</p>
           </div>

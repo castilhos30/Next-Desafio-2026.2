@@ -9,7 +9,7 @@ export default function Contato() {
             
             <h1 className="font-cairo font-bold text-white text-4xl md:text-6xl py-12"> Agende seu Momento</h1>
             
-            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 place-items-center justify-between">
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 place-items-start  justify-between">
                 <Envio />
                 <Redes></Redes>
             </div>

@@ -101,14 +101,14 @@ export function Header() {
                                 }>Contato</Button>
                             </Link>
 
-                            <Link href="/carrinho">
+                            {/*<Link href="/carrinho">
                                 <button className={`transition-colors flex items-center justify-center ${pathname === "/carrinho"
                                         ? "text-[#A6DF8B] hover:text-[#A6B68B]/90"
                                         : "text-[#C0C0C0] hover:text-[#e09e90]"
                                     }`}>
                                     <ShoppingCart size={28} strokeWidth={1.5} />
                                 </button>
-                            </Link>
+                            </Link> */}
 
                             <button className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 text-gray-500 hover:text-[#e09e90] hover:border-[#e09e90] transition-colors bg-white/50">
                                 <User size={28} strokeWidth={1.5} />
@@ -143,11 +143,11 @@ export function Header() {
                         <Image src="/Logo1.svg" alt="Logo" width={160} height={60} />
                     </Link>
                     <div className="flex items-center gap-4 text-[#e09e90]">
-                        <a href="/carrinho">
+                        {/*<a href="/carrinho">
                             <button aria-label="Carrinho">
                                 <ShoppingCart size={36} strokeWidth={1.5} />
                             </button>
-                        </a>
+                        </a>*/}
                         <button onClick={closeMenu} aria-label="Fechar menu">
                             <X size={44} strokeWidth={1.5} />
                         </button>

@@ -17,6 +17,7 @@ export default async function Home() {
         {produtos.map((produto) => (
           <Card
             key={produto.id}
+            id={produto.id}
             title={produto.titulo}
             description={produto.descricao}
             price={`R$ ${produto.preco.toFixed(2).replace('.', ',')}`}
