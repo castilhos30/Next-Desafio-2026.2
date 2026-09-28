@@ -1,68 +1,113 @@
 import { Navigation, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const focusRing =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ed9d8c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdf4e3]";
+
 export function Localizacao() {
   return (
-    <section className="w-full p-10 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center bg-white/20 backdrop-blur-sm border border-white/20 rounded-[2.5rem] shadow-sm">
+    <section className="relative w-full overflow-hidden rounded-[2.5rem] border border-[#f2e8dc] bg-white/65 p-6 shadow-[0_30px_70px_-35px_rgba(183,110,121,0.35)] backdrop-blur-sm sm:p-8 md:p-10">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#fdeae9]/70"
+      />
 
-      <div className="flex flex-col gap-6 w-full h-full">
-        <header className="flex items-center gap-3 ml-2">
-          <Navigation className="w-7 h-7 text-[#a66a6e]" strokeWidth={1.5} />
-          <h2 className="text-2xl text-white font-belleza">Local</h2>
-        </header>
+      <div className="relative grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+        <div className="flex w-full flex-col gap-5">
+          <header className="flex items-center gap-3">
+            <div className="flex size-11 items-center justify-center rounded-full bg-[#fdeae9] text-[#b76e79]">
+              <Navigation className="size-5" strokeWidth={1.5} />
+            </div>
 
-        <div className="w-full h-80 lg:h-[28rem] rounded-[2rem] overflow-hidden shadow-sm border border-white/20 bg-black/5">
-          <iframe
-            src="https://maps.google.com/maps?q=-21.8942458,-42.7106244&t=k&z=18&ie=UTF8&iwloc=&output=embed"
-            className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
+            <div>
+              <h2 className="font-belleza text-2xl text-[#5c3a3e] sm:text-3xl">
+                Onde estamos
+              </h2>
 
-      <div className="flex flex-col gap-8 justify-center mt-8 lg:mt-0">
-
-        <div className="w-full p-8 bg-white/30 backdrop-blur-sm border border-white/20 rounded-[2rem] shadow-sm">
-          <header className="flex items-center gap-3 mb-3">
-            <MapPin className="w-6 h-6 text-[#a66a6e]" strokeWidth={1.5} />
-            <h3 className="font-cairo font-bold text-lg text-white font-medium">Endereço</h3>
+              <p className="font-montserrat text-sm text-[#8a5c60]">
+                Venha nos visitar
+              </p>
+            </div>
           </header>
-          <div className="pl-9">
-            <p className="font-montserrat text-base text-white font-medium leading-relaxed">Rua João Miguel, 30</p>
-            <p className="font-montserrat text-base text-white font-medium leading-relaxed">Jamapará</p>
-            <p className="font-montserrat text-base text-white font-medium leading-relaxed">Sapucaia</p>
+
+          <div className="h-72 w-full overflow-hidden rounded-[2rem] border border-[#f2e8dc] bg-[#f2e8dc] shadow-sm sm:h-80 lg:h-[28rem]">
+            <iframe
+              src="https://maps.google.com/maps?q=-21.8942458,-42.7106244&t=k&z=18&ie=UTF8&iwloc=&output=embed"
+              className="h-full w-full border-0 grayscale transition-all duration-500 hover:grayscale-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização Castilhos BeCare"
+            />
           </div>
         </div>
 
-        <div className="w-full p-8 bg-white/30 backdrop-blur-sm border border-white/20 rounded-[2rem] shadow-sm">
-          <header className="flex items-center gap-3 mb-3">
-            <Clock className="w-6 h-6 text-[#a66a6e]" strokeWidth={1.5} />
-            <h3 className="font-cairo font-bold text-lg text-white font-medium">Horário</h3>
-          </header>
-          <div className="pl-9">
-            <p className="font-montserrat text-base text-white font-medium">Segunda a Sexta: a combinar</p>
-            <p className="font-montserrat text-base text-white font-medium">Sábado e Domingo: a combinar</p>
-          </div>
-        </div>
+        <div className="flex flex-col gap-5">
+          <div className="rounded-[2rem] border border-[#f2e8dc] bg-[#fdeae9]/70 p-6">
+            <header className="mb-3 flex items-center gap-3">
+              <div className="flex size-10 items-center justify-center rounded-full bg-white text-[#b76e79]">
+                <MapPin className="size-5" strokeWidth={1.5} />
+              </div>
 
-        <div className=" font-belleza flex justify-center lg:pl-10 mt-2">
-          <Button className="px-12 py-7 text-lg bg-[#ba7d82] hover:bg-[#a66a6e] text-white rounded-[2rem] font-medium tracking-wide transition-colors">
-            <a
-              href="https://www.google.com/maps/dir/?api=1&destination=-21.8942458,-42.7106244"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3"
+              <h3 className="font-belleza text-xl font-medium text-[#5c3a3e]">
+                Endereço
+              </h3>
+            </header>
+
+            <div className="pl-[3.25rem]">
+              <p className="font-montserrat text-sm leading-relaxed text-[#8a5c60] sm:text-base">
+                Rua João Miguel, 30
+              </p>
+
+              <p className="font-montserrat text-sm leading-relaxed text-[#8a5c60] sm:text-base">
+                Jamapará
+              </p>
+
+              <p className="font-montserrat text-sm leading-relaxed text-[#8a5c60] sm:text-base">
+                Sapucaia
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-[#f2e8dc] bg-[#fdf4e3] p-6">
+            <header className="mb-3 flex items-center gap-3">
+              <div className="flex size-10 items-center justify-center rounded-full bg-[#fdeae9] text-[#b76e79]">
+                <Clock className="size-5" strokeWidth={1.5} />
+              </div>
+
+              <h3 className="font-belleza text-xl font-medium text-[#5c3a3e]">
+                Horário
+              </h3>
+            </header>
+
+            <div className="pl-[3.25rem]">
+              <p className="font-montserrat text-sm leading-relaxed text-[#8a5c60] sm:text-base">
+                Segunda a Sexta: a combinar
+              </p>
+
+              <p className="font-montserrat text-sm leading-relaxed text-[#8a5c60] sm:text-base">
+                Sábado e Domingo: a combinar
+              </p>
+            </div>
+          </div>
+
+          <div className="flex justify-center pt-2 lg:justify-center">
+            <Button
+              className={`font-montserrat rounded-full bg-[#b76e79] px-8 py-6 text-sm font-semibold tracking-wide text-white shadow-[0_12px_24px_-12px_rgba(183,110,121,0.8)] transition-all hover:-translate-y-0.5 hover:bg-[#a25c67] ${focusRing}`}
             >
-              <MapPin className="w-6 h-6" />
-              Como chegar
-            </a>
-          </Button>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=-21.8942458,-42.7106244"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <MapPin className="size-4 shrink-0" />
+                <span>Como chegar</span>
+              </a>
+            </Button>
+          </div>
         </div>
-
       </div>
-
     </section>
   );
 }

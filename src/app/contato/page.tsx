@@ -1,23 +1,36 @@
-import { Envio } from "@/components/envio"
-import { Redes } from "@/components/redes"
-import { Localizacao } from "@/components/localizacao"
-
+import { Envio } from "@/components/envio";
+import { Redes } from "@/components/redes";
+import { Localizacao } from "@/components/localizacao";
 
 export default function Contato() {
-    return (
-        <main className="min-h-screen bg-gradient-to-l to-[#B76E79] via-[#D28582] from-[#ED9D8C] bg-cover bg-center bg-fixed py-12 px-4 pt-36 md:px-8 flex flex-col items-center">
-            
-            <h1 className="font-cairo font-bold text-white text-4xl md:text-6xl py-12"> Agende seu Momento</h1>
-            
-            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 place-items-start  justify-between">
-                <Envio />
-                <Redes></Redes>
-            </div>
+  return (
+    <main className="relative min-h-screen overflow-hidden bg-[#fdf4e3]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-[#fdeae9]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-44 -left-36 h-[32rem] w-[32rem] rounded-full bg-[#ffeeca]/80"
+      />
 
-            <div className="w-full py-14">
-                <Localizacao></Localizacao>
-            </div>
-        </main>
+      <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-28 md:px-10 md:pb-28 md:pt-36 lg:px-12">
+        
+        <section className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 items-start">
+          <div>
+            <Envio />
+          </div>
 
-    );
+          <div className="lg:pt-4">
+            <Redes />
+          </div>
+        </section>
+
+        <section className="mt-16 md:mt-24">
+          <Localizacao />
+        </section>
+
+      </div>
+    </main>
+  );
 }

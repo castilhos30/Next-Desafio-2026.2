@@ -1,57 +1,88 @@
-import { BsInstagram } from "react-icons/bs";
-import { BsWhatsapp } from "react-icons/bs";
-import { BsEnvelope } from "react-icons/bs";
-import {BsAppIndicator} from "react-icons/bs"
+import {
+  BsAppIndicator,
+  BsEnvelope,
+  BsInstagram,
+  BsWhatsapp,
+} from "react-icons/bs";
+
+const focusRing =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffeeca] focus-visible:ring-offset-2 focus-visible:ring-offset-[#b76e79]";
 
 export function Redes() {
   return (
-    <div className="w-full p-8 bg-white/20 backdrop-blur-sm border border-white/20 rounded-[2rem] shadow-sm">
-      
-      <header className="flex items-center gap-4 mb-8">
-         <div className="flex items-center justify-center w-14 h-14 bg-[#ba7d82]/80 border border-white/10 rounded-full ">
-                    <BsAppIndicator className="w-7 h-7 text-black/40" />
-                </div>
-        <h2 className="font-belleza text-2xl text-white font-medium">Nossas Redes</h2>
-      </header>
+    <div className="relative w-full overflow-hidden rounded-[2.5rem] bg-[#b76e79] p-6 shadow-[0_30px_70px_-30px_rgba(183,110,121,0.55)] sm:p-8 md:p-10">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#ed9d8c]/35"
+      />
 
-      <div className="flex flex-col gap-6">
-        
-        <a 
-          href="https://www.instagram.com/castilhosbe_care/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="flex items-center w-full h-[3.75rem] px-2 bg-white/40 border border-white/50 rounded-full hover:bg-white/50 transition-all group"
-        >
-          <div className="flex items-center justify-center w-11 h-11 rounded-full border-[1.5px] border-white text-[#8a5a5e] bg-white/10 group-hover:bg-white/30 transition-colors">
-              <BsInstagram className="text-white size-6" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-28 -left-20 h-60 w-60 rounded-full bg-[#8f555f]/35"
+      />
+
+      <div className="relative">
+        <header className="mb-8 flex items-center gap-4">
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#ffeeca] text-[#b76e79] sm:size-14">
+            <BsAppIndicator className="size-6 sm:size-7" />
           </div>
-          <span className="font-montserrat text-white mx-2">@castilhosbe_care</span>
-        </a>
 
-        <a 
-          href="#" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="flex items-center w-full h-[3.75rem] px-2 bg-white/40 border border-white/50 rounded-full hover:bg-white/50 transition-all group"
-        >
-          <div className="flex items-center justify-center w-11 h-11 rounded-full border-[1.5px] border-white text-[#8a5a5e] bg-white/10 group-hover:bg-white/30 transition-colors">
-              <BsWhatsapp className="text-white size-6" />
+          <div>
+            <h2 className="font-belleza text-2xl font-medium text-[#ffeeca] sm:text-3xl">
+              Nossas Redes
+            </h2>
+
+            <p className="font-montserrat mt-1 text-sm text-[#fdf4e3]/75">
+              Fique perto da Castilhos BeCare
+            </p>
           </div>
-          <span className="font-montserrat text-white mx-2">(32) 9803-1745 </span>
+        </header>
 
-        </a>
+        <div className="flex flex-col gap-4">
+          <a
+            href="https://www.instagram.com/castilhosbe_care/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram Castilhos BeCare"
+            className={`group flex min-h-[3.75rem] w-full items-center gap-3 rounded-full border border-white/15 bg-white/10 px-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 ${focusRing}`}
+          >
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white transition-colors group-hover:bg-[#ffeeca] group-hover:text-[#b76e79]">
+              <BsInstagram className="size-5" />
+            </div>
 
-        <a 
-          href="#" 
-          className="flex items-center w-full h-[3.75rem] px-2 bg-white/40 border border-white/50 rounded-full hover:bg-white/50 transition-all group"
-        >
-          <div className="flex items-center justify-center w-11 h-11 rounded-full border-[1.5px] border-white text-[#8a5a5e] bg-white/10 group-hover:bg-white/30 transition-colors">
-            <BsEnvelope className="text-white size-6" strokeWidth={1.5} />
-          </div>
-          <span className="font-montserrat text-white mx-2">castilhosbecare@gmail.com</span>
+            <span className="font-montserrat truncate text-sm font-medium text-[#fdf4e3] sm:text-base">
+              @castilhosbe_care
+            </span>
+          </a>
 
-        </a>
+          <a
+            href="https://api.whatsapp.com/message/JQYQMD3MLORLP1?autoload=1&app_absent=0&utm_source=ig"
+            aria-label="WhatsApp Castilhos BeCare"
+            className={`group flex min-h-[3.75rem] w-full items-center gap-3 rounded-full border border-white/15 bg-white/10 px-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 ${focusRing}`}
+          >
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white transition-colors group-hover:bg-[#ffeeca] group-hover:text-[#b76e79]">
+              <BsWhatsapp className="size-5" />
+            </div>
 
+            <span className="font-montserrat text-sm font-medium text-[#fdf4e3] sm:text-base">
+              (32) 9803-1745
+            </span>
+          </a>
+
+          <a
+            href="mailto:castilhosbecare@gmail.com"
+            aria-label="Enviar e-mail para Castilhos BeCare"
+            className={`group flex min-h-[3.75rem] w-full items-center gap-3 rounded-full border border-white/15 bg-white/10 px-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 ${focusRing}`}
+          >
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white transition-colors group-hover:bg-[#ffeeca] group-hover:text-[#b76e79]">
+              <BsEnvelope className="size-5" />
+            </div>
+
+            <span className="font-montserrat truncate text-sm font-medium text-[#fdf4e3] sm:text-base">
+              castilhosbecare@gmail.com
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   );

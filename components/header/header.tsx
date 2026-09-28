@@ -4,184 +4,351 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ShoppingCart, User, Menu, X, Home, Phone, ShoppingBag } from "lucide-react";
-import { motion, LayoutGroup } from "framer-motion"; 
-import { Button } from "@/components/ui/button";
+import {
+  Menu,
+  X,
+  Home,
+  Phone,
+  ShoppingBag,
+  HeartHandshake,
+} from "lucide-react";
+import { motion, LayoutGroup } from "framer-motion";
 
 const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/sobre", label: "Sobre nós" },
-    { path: "/produtos", label: "Produtos" },
+  {
+    path: "/",
+    label: "Home",
+    icon: Home,
+  },
+  {
+    path: "/sobre",
+    label: "Sobre nós",
+    icon: HeartHandshake,
+  },
+  {
+    path: "/produtos",
+    label: "Produtos",
+    icon: ShoppingBag,
+  },
 ];
 
+const focusRing =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffeeca] focus-visible:ring-offset-2 focus-visible:ring-offset-[#b76e79]";
+
 export function Header() {
-    const pathname = usePathname();
+  const pathname = usePathname();
 
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
 
-        window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    window.addEventListener("scroll", handleScroll);
 
-    useEffect(() => {
-        if (isMobileMenuOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "unset";
-        }
-    }, [isMobileMenuOpen]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-    const closeMenu = () => setIsMobileMenuOpen(false);
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
-    return (
-        <>
-            <header
-                className={`font-cairo font-bold fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled
-                        ? "bg-[#faf9f9]/95 backdrop-blur-md shadow-sm border-b"
-                        : "bg-transparent"
-                    }`}
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
+  const closeMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <>
+     
+      <header
+        className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
+          isScrolled
+            ? "border-b border-[#ead9d0]/70 bg-[#fdf4e3]/90 shadow-[0_10px_35px_-25px_rgba(183,110,121,0.6)] backdrop-blur-xl"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
+          <div
+            className={`flex items-center justify-between transition-all duration-300 ${
+              isScrolled ? "h-24" : "h-28"
+            }`}
+          >
+            <Link
+              href="/"
+              aria-label="Castilhos BeCare - página inicial"
+              className={`relative z-50 shrink-0 rounded-xl ${focusRing}`}
             >
-                <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
-                    <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? "h-24" : "h-28"
-                        }`}>
+              <Image
+                src="/Logo1.svg"
+                alt="Logo Castilhos BeCare"
+                width={200}
+                height={80}
+                priority
+                className={`w-auto object-contain transition-all duration-300 ${
+                  isScrolled ? "h-[4.2rem]" : "h-[4.8rem]"
+                }`}
+              />
+            </Link>
 
-                        <Link href="/" className="z-40">
-                            <Image src="/Logo1.svg" alt="Logo" width={200} height={80} />
-                        </Link>
+            <LayoutGroup>
+              <nav
+                aria-label="Navegação principal"
+                className={`hidden items-center rounded-full border border-[#875950] bg-[#b76e79] p-1 shadow-[0_12px_30px_-20px_rgba(92,58,62,0.8)] md:flex ${
+                  isScrolled ? "h-14" : "h-[3.6rem]"
+                }`}
+              >
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.path;
+                  const Icon = link.icon;
 
-                        <LayoutGroup>
-                            <nav className="hidden md:flex items-center justify-center gap-10 lg:gap-16 bg-[#B76E79] px-4 rounded-full h-[3.5rem] border border-[#875950]">
-                                {navLinks.map((link) => {
-                                    const isActive = pathname === link.path;
+                  return (
+                    <Link
+                      key={link.path}
+                      href={link.path}
+                      aria-current={isActive ? "page" : undefined}
+                      className={`font-montserrat relative flex h-full items-center gap-2 rounded-full px-6 text-sm font-medium tracking-wide transition-colors lg:px-8 ${
+                        isActive
+                          ? "text-white"
+                          : "text-white/85 hover:text-white"
+                      } ${focusRing}`}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="bubble-nav"
+                          className="absolute inset-0 rounded-full border border-[#875950] bg-[#e09e90] shadow-[0_5px_15px_-10px_rgba(92,58,62,0.8)]"
+                          transition={{
+                            type: "spring",
+                            stiffness: 350,
+                            damping: 30,
+                          }}
+                        />
+                      )}
 
-                                    return (
-                                        <Link
-                                            key={link.path}
-                                            href={link.path}
-                                            className={`relative px-8 py-2 transition-colors rounded-full text-white ${!isActive ? "hover:text-white/80" : ""
-                                                }`}
-                                        >
-                                            <span className="relative z-10 font-medium tracking-wide">
-                                                {link.label}
-                                            </span>
+                      <Icon className="relative z-10 h-4 w-4" />
 
-                                            {isActive && (
-                                                <motion.div
-                                                    layoutId="bubble-nav"
-                                                    className="absolute inset-0 bg-[#e09e90] border border-[#875950] rounded-full shadow-sm"
-                                                    transition={{
-                                                        type: "spring",
-                                                        stiffness: 350, 
-                                                        damping: 30   
-                                                    }}
-                                                />
-                                            )}
-                                        </Link>
-                                    );
-                                })}
-                            </nav>
-                        </LayoutGroup>
+                      <span className="relative z-10">
+                        {link.label}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </nav>
+            </LayoutGroup>
 
-                        <div className="hidden md:flex items-center gap-5 h-16">
-                            <Link href="/contato" className="text-white hover:text-[#e09e90] transition-colors bg-[#B76E79] p-2 rounded-4xl">
-                                <Button className={pathname === "/contato"
-                                    ? "bg-[#e09e90] text-white hover:bg-[#e09e90]/90 border border-[#875950] rounded-4xl"
-                                    : "text-white hover:bg-transparent hover:text-[#e09e90]"
-                                }>Contato</Button>
-                            </Link>
+            {/* AÇÕES */}
+            <div className="hidden items-center gap-3 md:flex">
+              {/* CONTATO */}
+              <Link
+                href="/contato"
+                aria-current={pathname === "/contato" ? "page" : undefined}
+                className={`font-montserrat inline-flex h-12 items-center justify-center rounded-full border px-6 text-sm font-semibold transition-all duration-300 ${
+                  pathname === "/contato"
+                    ? "border-[#875950] bg-[#e09e90] text-white shadow-sm"
+                    : "border-[#b76e79] bg-[#b76e79] text-white hover:-translate-y-0.5 hover:bg-[#a25c67]"
+                } ${focusRing}`}
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                Contato
+              </Link>
 
-                            {/*<Link href="/carrinho">
-                                <button className={`transition-colors flex items-center justify-center ${pathname === "/carrinho"
-                                        ? "text-[#A6DF8B] hover:text-[#A6B68B]/90"
-                                        : "text-[#C0C0C0] hover:text-[#e09e90]"
-                                    }`}>
-                                    <ShoppingCart size={28} strokeWidth={1.5} />
-                                </button>
-                            </Link> */}
 
-                            <button className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 text-gray-500 hover:text-[#e09e90] hover:border-[#e09e90] transition-colors bg-white/50">
-                                <User size={28} strokeWidth={1.5} />
-                            </button>
-                        </div>
-
-                        <button
-                            className="md:hidden flex items-center justify-center z-40 text-[#B76E79]"
-                            onClick={() => setIsMobileMenuOpen(true)}
-                            aria-label="Abrir menu"
-                        >
-                            <Menu size={40} strokeWidth={1.5} />
-                        </button>
-
-                    </div>
-                </div>
-            </header>
-
-            {isMobileMenuOpen && (
-                <div
-                    className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden transition-opacity"
-                    onClick={closeMenu}
+              {/*
+              <Link
+                href="/carrinho"
+                aria-label="Carrinho"
+                className={`flex h-11 w-11 items-center justify-center rounded-full border transition-colors ${
+                  pathname === "/carrinho"
+                    ? "border-[#875950] bg-[#e09e90] text-white"
+                    : "border-[#d9cbc4] bg-white/70 text-[#7f5b5e] hover:border-[#e09e90] hover:text-[#e09e90]"
+                } ${focusRing}`}
+              >
+                <ShoppingCart
+                  size={23}
+                  strokeWidth={1.5}
                 />
-            )}
+              </Link>
+              */}
 
-            <div
-                className={`fixed top-0 left-0 w-full z-50 bg-[#F5F5F5]/50 rounded-b-[40px] shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-8 pb-12 px-6 ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-                    }`}
-            >
-                <div className="flex items-center justify-between mb-12">
-                    <Link href="/" onClick={closeMenu}>
-                        <Image src="/Logo1.svg" alt="Logo" width={160} height={60} />
-                    </Link>
-                    <div className="flex items-center gap-4 text-[#e09e90]">
-                        {/*<a href="/carrinho">
-                            <button aria-label="Carrinho">
-                                <ShoppingCart size={36} strokeWidth={1.5} />
-                            </button>
-                        </a>*/}
-                        <button onClick={closeMenu} aria-label="Fechar menu">
-                            <X size={44} strokeWidth={1.5} />
-                        </button>
-                    </div>
-                </div>
+            
 
-                <div className="flex flex-col items-center gap-5 w-full">
-
-                    <Link href="/" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
-                        <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
-                        <Home size={28} strokeWidth={1.5} className="mr-3" />
-                        <span className="flex-1 text-center font-belleza font-medium pr-14">Home</span>
-                    </Link>
-
-                    <Link href="/contato" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
-                        <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
-                        <Phone size={28} strokeWidth={1.5} className="mr-3" />
-                        <span className="flex-1 text-center font-belleza font-medium pr-14">Contato</span>
-                    </Link>
-
-                    <Link href="/sobre" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
-                        <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
-                        <User size={28} strokeWidth={1.5} className="mr-3" />
-                        <span className="flex-1 text-center font-belleza font-medium pr-14">Sobre Nós</span>
-                    </Link>
-
-                    <Link href="/produtos" onClick={closeMenu} className="flex items-center w-full max-w-[320px] h-16 bg-[#F5F5F5]/60 border border-white/30 rounded-full px-5 text-[#e09e90] hover:bg-white/10 transition-colors">
-                        <div className="w-[2px] h-8 bg-[#e09e90] rounded-full mr-5"></div>
-                        <ShoppingBag size={28} strokeWidth={1.5} className="mr-3" />
-                        <span className="flex-1 text-center font-belleza font-medium pr-14">Produtos</span>
-                    </Link>
-
-                </div>
+              {/*
+              <Link
+                href="/perfil"
+                aria-label="Minha conta"
+                className={`flex h-11 w-11 items-center justify-center rounded-full border transition-colors ${
+                  pathname === "/perfil"
+                    ? "border-[#875950] bg-[#e09e90] text-white"
+                    : "border-[#d9cbc4] bg-white/70 text-[#7f5b5e] hover:border-[#e09e90] hover:text-[#e09e90]"
+                } ${focusRing}`}
+              >
+                <User
+                  size={23}
+                  strokeWidth={1.5}
+                />
+              </Link>
+              */}
             </div>
-        </>
-    );
+
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Abrir menu"
+              aria-expanded={isMobileMenuOpen}
+              className={`relative z-50 flex h-12 w-12 items-center justify-center rounded-full text-[#5C3A3E] transition-all hover:bg-[#fdeae9] md:hidden ${focusRing}`}
+            >
+              <Menu size={34} strokeWidth={1.5} />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      
+      {isMobileMenuOpen && (
+        <div
+          aria-hidden="true"
+          className="fixed inset-0 z-[60] bg-[#5c3a3e]/45 backdrop-blur-sm md:hidden"
+          onClick={closeMenu}
+        />
+      )}
+
+      
+      <div
+        className={`fixed left-0 top-0 z-[70] w-full transform rounded-b-[2.5rem] border-b border-[#ead9d0] bg-[#fdf4e3]/95 px-5 pb-10 pt-6 shadow-[0_30px_70px_-25px_rgba(92,58,62,0.45)] backdrop-blur-xl transition-transform duration-300 ease-out md:hidden ${
+          isMobileMenuOpen
+            ? "translate-y-0"
+            : "-translate-y-full"
+        }`}
+      >
+        {/* Cabeçalho */}
+        <div className="mb-10 flex items-center justify-between">
+          <Link
+            href="/"
+            onClick={closeMenu}
+            aria-label="Castilhos BeCare - página inicial"
+            className={`rounded-xl ${focusRing}`}
+          >
+            <Image
+              src="/Logo1.svg"
+              alt="Logo Castilhos BeCare"
+              width={160}
+              height={60}
+              className="h-auto w-[9rem] object-contain"
+            />
+          </Link>
+
+          <button
+            type="button"
+            onClick={closeMenu}
+            aria-label="Fechar menu"
+            className={`flex h-12 w-12 items-center justify-center rounded-full text-[#b76e79] transition-colors hover:bg-[#fdeae9] ${focusRing}`}
+          >
+            <X size={34} strokeWidth={1.5} />
+          </button>
+        </div>
+
+        <nav
+          aria-label="Navegação mobile"
+          className="mx-auto flex w-full max-w-md flex-col gap-3"
+        >
+          {navLinks.map((link) => {
+            const isActive = pathname === link.path;
+            const Icon = link.icon;
+
+            return (
+              <Link
+                key={link.path}
+                href={link.path}
+                onClick={closeMenu}
+                aria-current={isActive ? "page" : undefined}
+                className={`group relative flex h-16 w-full items-center overflow-hidden rounded-full border px-5 transition-all duration-300 ${
+                  isActive
+                    ? "border-[#875950] bg-[#b76e79] text-white shadow-[0_12px_25px_-18px_rgba(92,58,62,0.9)]"
+                    : "border-[#ead9d0] bg-white/55 text-[#b76e79] hover:border-[#ed9d8c] hover:bg-white/80"
+                } ${focusRing}`}
+              >
+                <span
+                  className={`mr-5 h-8 w-[3px] rounded-full transition-colors ${
+                    isActive
+                      ? "bg-[#ffeeca]"
+                      : "bg-[#ed9d8c]"
+                  }`}
+                />
+
+                <Icon
+                  size={25}
+                  strokeWidth={1.5}
+                  className={`mr-4 shrink-0 ${
+                    isActive
+                      ? "text-[#ffeeca]"
+                      : "text-[#b76e79]"
+                  }`}
+                />
+
+                <span className="font-belleza flex-1 text-left text-lg font-medium">
+                  {link.label}
+                </span>
+
+                <span
+                  className={`text-lg transition-transform duration-300 group-hover:translate-x-1 ${
+                    isActive
+                      ? "text-[#ffeeca]"
+                      : "text-[#ed9d8c]"
+                  }`}
+                >
+                  →
+                </span>
+              </Link>
+            );
+          })}
+
+          <Link
+            href="/contato"
+            onClick={closeMenu}
+            aria-current={pathname === "/contato" ? "page" : undefined}
+            className={`mt-3 flex h-16 w-full items-center rounded-full bg-[#e09e90] px-5 text-white shadow-[0_14px_30px_-18px_rgba(183,110,121,0.9)] transition-all duration-300 hover:bg-[#b76e79] ${focusRing}`}
+          >
+            <span className="mr-5 h-8 w-[3px] rounded-full bg-[#ffeeca]" />
+
+            <Phone
+              size={25}
+              strokeWidth={1.5}
+              className="mr-4 text-[#ffeeca]"
+            />
+
+            <span className="font-belleza flex-1 text-left text-lg font-medium">
+              Contato
+            </span>
+
+            <span className="text-lg text-[#ffeeca]">
+              →
+            </span>
+          </Link>
+        </nav>
+
+        <div className="mx-auto mt-8 max-w-md text-center">
+          <p className="font-montserrat text-xs tracking-wide text-[#8a5c60]">
+            Beleza • Bem-estar • Autocuidado
+          </p>
+        </div>
+      </div>
+    </>
+  );
 }
