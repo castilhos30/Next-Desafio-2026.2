@@ -109,7 +109,7 @@ export const Footer = () => {
             <ul className="font-montserrat flex flex-col items-center space-y-4 text-lg md:items-start">
               <li className="flex items-center gap-3">
                 <BsGeoAlt className="size-5 shrink-0 text-[#ffeeca]" />
-                <span className="text-sm leading-relaxed text-white/80">
+                <span>
                   Rua João Miguel, 30 - Jamapará<br />
                   Sapucaia - RJ, 25887-000
                 </span>
