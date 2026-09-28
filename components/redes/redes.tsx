@@ -56,7 +56,7 @@ export function Redes() {
           </a>
 
           <a
-            href="https://api.whatsapp.com/message/JQYQMD3MLORLP1?autoload=1&app_absent=0&utm_source=ig"
+            href="https://wa.me/5532998031745"
             aria-label="WhatsApp Castilhos BeCare"
             className={`group flex min-h-[3.75rem] w-full items-center gap-3 rounded-full border border-white/15 bg-white/10 px-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 ${focusRing}`}
           >

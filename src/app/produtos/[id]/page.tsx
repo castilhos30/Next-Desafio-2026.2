@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, CreditCard } from "lucide-react";
-import { getProdutos } from "../../../server/query/produtos/query"; // Certifique-se de que o caminho está correto
+import { ArrowLeft, CalendarDays} from "lucide-react";
+import { getProdutos } from "../../../server/query/produtos/query";
 
 const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ed9d8c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdf4e3]";
@@ -56,7 +56,7 @@ export default async function ProdutoExpandido({ params }: Props) {
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 pt-28 md:pb-32 md:pt-36">
-        
+
         <Link
           href="/produtos"
           className={`font-montserrat inline-flex items-center gap-2 rounded-full bg-[#fdeae9] px-5 py-2.5 text-sm font-medium text-[#b76e79] shadow-sm transition-colors hover:bg-[#ed9d8c]/60 hover:text-white ${focusRing}`}
@@ -66,7 +66,7 @@ export default async function ProdutoExpandido({ params }: Props) {
         </Link>
 
         <div className="mt-10 grid grid-cols-1 items-center gap-16 md:mt-14 md:grid-cols-2 md:gap-16 lg:gap-24">
-          
+
           <div className="relative mx-auto w-full max-w-md md:max-w-[30rem]">
             <div
               aria-hidden="true"
@@ -102,17 +102,19 @@ export default async function ProdutoExpandido({ params }: Props) {
                 {precoFormatado}
               </span>
 
-              <button
-                type="button"
+              <a
+                href="https://wa.me/5532998031745"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`font-montserrat inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#b76e79] px-10 py-3.5 text-base font-semibold text-white shadow-[0_12px_24px_-12px_rgba(183,110,121,0.8)] transition-colors hover:bg-[#a25c67] motion-safe:active:scale-[0.98] sm:w-auto ${focusRing}`}
               >
-                <CreditCard className="h-5 w-5" />
-                Pagar
-              </button>
-            </div>
+                <CalendarDays className="h-5 w-5" />
+                Marcar
+            </a>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+    </main >
   );
 }

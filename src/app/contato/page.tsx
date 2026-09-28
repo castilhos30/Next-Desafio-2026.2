@@ -1,6 +1,7 @@
 import { Envio } from "@/components/envio";
 import { Redes } from "@/components/redes";
 import { Localizacao } from "@/components/localizacao";
+import { Reveal } from "@/components/reveal";
 
 export default function Contato() {
   return (
@@ -17,17 +18,24 @@ export default function Contato() {
       <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-28 md:px-10 md:pb-28 md:pt-36 lg:px-12">
         
         <section className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 items-start">
-          <div>
-            <Envio />
-          </div>
+          
+          <Reveal from="up" delay={100}>
+            <div>
+              <Envio />
+            </div>
+          </Reveal>
 
-          <div className="lg:pt-4">
-            <Redes />
-          </div>
+          <Reveal from="up" delay={300}>
+            <div className="lg:pt-4">
+              <Redes />
+            </div>
+          </Reveal>
         </section>
 
         <section className="mt-16 md:mt-24">
-          <Localizacao />
+          <Reveal from="up">
+            <Localizacao />
+          </Reveal>
         </section>
 
       </div>

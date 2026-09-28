@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
@@ -6,9 +5,31 @@ import { ArrowRight, Sparkles } from "lucide-react";
 const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ed9d8c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdf4e3]";
 
+const estilosAnimacao = `
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(60px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.animate-fade-in-up-1 {
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.animate-fade-in-up-2 {
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
+`;
+
+function AnimacoesHero() {
+  return <style dangerouslySetInnerHTML={{ __html: estilosAnimacao }} />;
+}
+
 export const HeroSection = () => {
   return (
     <section className="relative isolate min-h-[calc(100svh-112px)] overflow-hidden bg-[#fdf4e3] md:min-h-[calc(90svh-112px)]">
+      <AnimacoesHero />
+
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[url('/hero-section.png')] bg-cover bg-center bg-no-repeat"
@@ -38,7 +59,7 @@ export const HeroSection = () => {
         <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
           <div className="flex pt-16 justify-center lg:justify-start">
-            <div className="w-full max-w-2xl rounded-[2.5rem] border border-white/60 bg-[#fdf4e3]/85 p-7 shadow-[0_30px_70px_-30px_rgba(183,110,121,0.4)] backdrop-blur-sm sm:p-10 md:p-12">
+            <div className="animate-fade-in-up-1 w-full max-w-2xl rounded-[2.5rem] border border-white/60 bg-[#fdf4e3]/85 p-7 shadow-[0_30px_70px_-30px_rgba(183,110,121,0.4)] backdrop-blur-sm sm:p-10 md:p-12">
 
               <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#fdeae9] px-4 py-2">
                 <Sparkles className="h-4 w-4 text-[#b76e79]" />
@@ -69,7 +90,7 @@ export const HeroSection = () => {
               <div className="mt-8">
                 <Link
                   target="_blank"
-                  href="https://api.whatsapp.com/message/JQYQMD3MLORLP1?autoload=1&app_absent=0&utm_source=ig"
+                  href="https://wa.me/5532998031745"
                   className={`font-montserrat inline-flex items-center justify-center gap-2 rounded-full bg-[#b76e79] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_14px_28px_-14px_rgba(183,110,121,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#a25c67] motion-safe:active:scale-[0.98] md:px-8 md:text-base ${focusRing}`}
                 >
                   Fale Conosco
@@ -79,9 +100,8 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Logo */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-xl">
+            <div className="animate-fade-in-up-2 relative w-full max-w-xl">
 
               <div
                 aria-hidden="true"
@@ -113,11 +133,11 @@ export const HeroSection = () => {
 };
 
 
-
-
 export const HeroSection2 = () => {
   return (
     <section className="relative isolate min-h-[calc(100svh-112px)] overflow-hidden bg-[#b76e79] md:min-h-[calc(90svh-112px)]">
+      {/* Injeção dos estilos de animação */}
+      <AnimacoesHero />
 
       <div
         aria-hidden="true"
@@ -154,7 +174,7 @@ export const HeroSection2 = () => {
         <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
           <div className="flex pt-16 justify-center lg:justify-start">
-            <div className="w-full max-w-2xl rounded-[2.5rem] border border-white/15 bg-[#5c3a3e]/30 p-7 shadow-[0_30px_70px_-30px_rgba(92,58,62,0.65)] backdrop-blur-sm sm:p-10 md:p-12">
+            <div className="animate-fade-in-up-1 w-full max-w-2xl rounded-[2.5rem] border border-white/15 bg-[#5c3a3e]/30 p-7 shadow-[0_30px_70px_-30px_rgba(92,58,62,0.65)] backdrop-blur-sm sm:p-10 md:p-12">
 
               <span className="font-montserrat inline-flex rounded-full bg-[#fdeae9] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#b76e79]">
                 Conheça a BeCare
@@ -183,7 +203,7 @@ export const HeroSection2 = () => {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-md">
+            <div className="animate-fade-in-up-2 relative w-full max-w-md">
 
               <div
                 aria-hidden="true"

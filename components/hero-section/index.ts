@@ -1,0 +1,1 @@
+export { HeroSection, HeroSection2 } from "./hero-section";

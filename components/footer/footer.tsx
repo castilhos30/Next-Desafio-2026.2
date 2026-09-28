@@ -22,7 +22,11 @@ const navegacao = [
 ];
 
 const redes = [
-  { href: "/", label: "WhatsApp", Icon: BsWhatsapp },
+  { 
+    href: "https://wa.me/5532998031745", 
+    label: "WhatsApp", 
+    Icon: BsWhatsapp 
+  },
   {
     href: "https://www.instagram.com/castilhosbe_care/",
     label: "Instagram",
@@ -71,7 +75,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Navegação */}
           <nav aria-label="Navegação do rodapé" className="flex flex-col items-center md:col-span-3 md:items-start">
             <div className="mb-6 flex items-center justify-center gap-3 md:justify-start">
               <span className="flex size-10 items-center justify-center rounded-full bg-[#ffeeca] text-[#b76e79]">
@@ -95,7 +98,6 @@ export const Footer = () => {
             </ul>
           </nav>
 
-          {/* Contato */}
           <div className="flex flex-col items-center md:col-span-4 md:items-start">
             <div className="mb-6 flex items-center justify-center gap-3 md:justify-start">
               <span className="flex size-10 items-center justify-center rounded-full bg-[#fdeae9] text-[#b76e79]">
