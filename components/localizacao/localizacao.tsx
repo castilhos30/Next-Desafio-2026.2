@@ -56,15 +56,11 @@ export function Localizacao() {
 
             <div className="pl-[3.25rem]">
               <p className="font-montserrat text-sm leading-relaxed text-[#8a5c60] sm:text-base">
-                Rua João Miguel, 30
+                Rua João Miguel, 30 - Jamapará
               </p>
 
               <p className="font-montserrat text-sm leading-relaxed text-[#8a5c60] sm:text-base">
-                Jamapará
-              </p>
-
-              <p className="font-montserrat text-sm leading-relaxed text-[#8a5c60] sm:text-base">
-                Sapucaia
+                Sapucaia - RJ, 25887-000
               </p>
             </div>
           </div>

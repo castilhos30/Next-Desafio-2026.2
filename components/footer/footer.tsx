@@ -22,10 +22,10 @@ const navegacao = [
 ];
 
 const redes = [
-  { 
-    href: "https://wa.me/5532998031745", 
-    label: "WhatsApp", 
-    Icon: BsWhatsapp 
+  {
+    href: "https://wa.me/5532998031745",
+    label: "WhatsApp",
+    Icon: BsWhatsapp
   },
   {
     href: "https://www.instagram.com/castilhosbe_care/",
@@ -47,7 +47,7 @@ export const Footer = () => {
 
       <div className="relative mx-auto max-w-6xl px-6 pb-12 pt-16 text-[#fdf4e3] md:pt-24">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8">
-          
+
           <div className="flex flex-col items-center md:col-span-5 md:items-start">
             <Link href="/home" className={`rounded-lg ${focusRing}`}>
               <Image
@@ -109,7 +109,9 @@ export const Footer = () => {
             <ul className="font-montserrat flex flex-col items-center space-y-4 text-lg md:items-start">
               <li className="flex items-center gap-3">
                 <BsGeoAlt className="size-5 shrink-0 text-[#ffeeca]" />
-                <span>Rua João Miguel, 30 - Jamapará
+                <span className="text-sm leading-relaxed text-white/80">
+                  Rua João Miguel, 30 - Jamapará<br />
+                  Sapucaia - RJ, 25887-000
                 </span>
               </li>
               <li className="flex items-center gap-3">

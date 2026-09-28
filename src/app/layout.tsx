@@ -30,10 +30,28 @@ const belleza = Belleza({
 
 export const metadata: Metadata = {
   title: {
-    default: "Castilhos BeCare", 
-    template: "Castilhos BeCare", 
+    default: "Castilhos BeCare | Design de Sobrancelhas e Cílios",
+    template: "%s | Castilhos BeCare",
   },
-  description: "Descrição de teste ",
+  description: "Transforme seu olhar na Castilhos BeCare. Especialistas em design de sobrancelhas, extensão de cílios e autocuidado em Jamapará e Sapucaia. Agende seu horário!",
+  keywords: [
+    "design de sobrancelhas",
+    "extensão de cílios",
+    "estética",
+    "autocuidado",
+    "Castilhos BeCare",
+    "Jamapará",
+    "Sapucaia",
+    "Além Paraíba"
+  ],
+  openGraph: {
+    title: "Castilhos BeCare | Design de Sobrancelhas e Cílios",
+    description: "Espaço dedicado à sua beleza, bem-estar e autocuidado em Jamapará e região.",
+   // url: "https://seu-dominio.com",  adicionar dominio dps
+    siteName: "Castilhos BeCare",
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
