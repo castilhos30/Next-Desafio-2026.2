@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://castilhosbecare.com.br/sitemap.xml', //mudar o dominio dps
+    sitemap: 'https://www.castilhosbecare.com.br/sitemap.xml',
   };
 }
