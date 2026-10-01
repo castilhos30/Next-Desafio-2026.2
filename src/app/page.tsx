@@ -12,12 +12,8 @@ export default async function Home() {
 
   return (
     <article className="flex flex-col">
-      {/* A hero já anima Asozinha ao carregar, por isso não usa o Reveal */}
       <HeroSection />
 
-      {/* from="none": só aparece com fade, para não deixar uma faixa vazia
-          aparecer atrás da seção enquanto ela sobe (as seções ocupam a
-          largura toda e têm fundo colorido) */}
       <Reveal from="none">
         <Carrossel title="Nossos Serviços" bgColor="bg-[#E99081]/40" uniqueId="servicos">
           {produtos.map((produto) => (
