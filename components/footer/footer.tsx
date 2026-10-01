@@ -49,7 +49,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8">
 
           <div className="flex flex-col items-center md:col-span-5 md:items-start">
-            <Link href="/home" className={`rounded-lg ${focusRing}`}>
+            <Link href="/" className={`rounded-lg ${focusRing}`}>
               <Image
                 src="/Logo2.svg"
                 alt="Logo Castilhos BeCare"
