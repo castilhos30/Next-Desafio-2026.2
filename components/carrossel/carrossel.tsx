@@ -66,6 +66,17 @@ export function Carrossel({
             slidesPerView={1} 
             breakpoints={{
               768: {
+                slidesPerView: 1, 
+                spaceBetween: 32, 
+                centeredSlides: true, 
+              },
+              1024: {
+                slidesPerView: 2, 
+                spaceBetween: 40, 
+                centeredSlides: false, 
+              },
+              // Monitores desktop padrão (1280px em diante): 3 cards
+              1280: {
                 slidesPerView: 3, 
                 spaceBetween: 48, 
                 centeredSlides: false, 
