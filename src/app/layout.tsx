@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Castilhos BeCare | Design de Sobrancelhas e Cílios",
     description: "Espaço dedicado à sua beleza, bem-estar e autocuidado em Jamapará e região.",
-   // url: "https://seu-dominio.com",  adicionar dominio dps
+   url: "https://castilhosbecare.com.br",
     siteName: "Castilhos BeCare",
     locale: "pt_BR",
     type: "website",
